@@ -1,8 +1,15 @@
+// Images
+import facebook from "../images/icon-facebook.svg";
+import twitter from "../images/icon-twitter.svg";
+import pinterest from "../images/icon-pinterest.svg";
+import instagram from "../images/icon-instagram.svg";
+import whiteLogo from "../images/white-logo.svg";
+
 function Footer() {
   return (
     <>
       <div className="grid translate-x-[50%] right-[50%] mt-10 z-50 absolute ">
-        <img src="/images/white-logo.svg" />
+        <img src={whiteLogo} />
       </div>
       <footer className="flex flex-col items-center text-center leading-loose p-10 bg-base-300 text-base-content gap-8">
         <div className="tracking-wider mt-16">
@@ -26,10 +33,10 @@ function Footer() {
 
           <div className="mt-10">
             <div className="grid grid-flow-col gap-10">
-              <img src="/images/icon-facebook.svg" />
-              <img src="/images/icon-twitter.svg" />
-              <img src="/images/icon-pinterest.svg" />
-              <img src="/images/icon-instagram.svg" />
+              <img src={facebook} />
+              <img src={twitter} />
+              <img src={pinterest} />
+              <img src={instagram} />
             </div>
           </div>
         </div>

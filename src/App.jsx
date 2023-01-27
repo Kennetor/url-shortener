@@ -1,5 +1,12 @@
+// Images
+import logo from "./images/logo.svg";
+import working from "./images/illustration-working.svg";
+import shorten from "./images/bg-shorten-mobile.svg";
+import brand from "./images/icon-brand-recognition.svg";
+import records from "./images/icon-detailed-records.svg";
+import customizable from "./images/icon-fully-customizable.svg";
+import boost from "./images/bg-boost-mobile.svg";
 // Components
-
 import Footer from "./component/footer";
 
 function App() {
@@ -7,7 +14,7 @@ function App() {
     <>
       <div className="App">
         <div className="mt-10 ml-10 absolute">
-          <img src="/images/logo.svg" />
+          <img src={logo} />
         </div>
         <div className="absolute right-10 mt-10 scale-150 text-slate-500">
           <svg
@@ -25,10 +32,7 @@ function App() {
           </svg>
         </div>
         <div className="overflow-hidden">
-          <img
-            src="/images/illustration-working.svg"
-            className="absolute top-32 left-20 scale-125"
-          />
+          <img src={working} className="absolute top-32 left-20 scale-125" />
         </div>
 
         <div className="absolute top-96 translate-y-12">
@@ -49,10 +53,7 @@ function App() {
       >
         <div className="overflow-hidden rounded-xl">
           <div className="translate-x-40  ">
-            <img
-              src="/images/bg-shorten-mobile.svg"
-              className="rounded-2xl scale-125"
-            />
+            <img src={shorten} className="rounded-2xl scale-125" />
             <div className="-translate-x-40 -translate-y-[110px]">
               <input
                 type="text"
@@ -78,10 +79,7 @@ function App() {
         <div className="flex mt-16">
           <div className="grid justify-center items-center bg-white w-fit px-10 text-[15px] h-72 absolute rounded-md">
             <div className="flex m-auto bg-[#3b3054] -translate-y-20 rounded-full w-24 h-24 z-50">
-              <img
-                src="/images/icon-brand-recognition.svg"
-                className="flex m-auto z-50"
-              />
+              <img src={brand} className="flex m-auto z-50" />
             </div>
             <h1 className="-mt-44 text-2xl">Brand Recognition</h1>
 
@@ -96,10 +94,7 @@ function App() {
         {/* Detailed Records */}
         <div className="translate-y-60">
           <div className="flex m-auto bg-[#3b3054] translate-y-10 rounded-full w-24 h-24 z-50">
-            <img
-              src="/images/icon-detailed-records.svg"
-              className="flex m-auto z-50"
-            />
+            <img src={records} className="flex m-auto z-50" />
           </div>
           <div className="grid justify-center items-center bg-white w-fit px-10 text-[15px] h-72 -z-50 rounded-md">
             <h1 className="mt-6 z-50 text-2xl">Detailed Records</h1>
@@ -112,10 +107,7 @@ function App() {
           </div>
           {/* Fully Customizable */}
           <div className="flex m-auto bg-[#3b3054] translate-y-20 rounded-full w-24 h-24 z-50">
-            <img
-              src="/images/icon-fully-customizable.svg"
-              className="flex m-auto z-50"
-            />
+            <img src={customizable} className="flex m-auto z-50" />
           </div>
           <div className="grid justify-center items-center mt-6 bg-white w-fit px-10 text-[15px] h-72 -z-50 rounded-md">
             {" "}
@@ -130,7 +122,7 @@ function App() {
       </div>
       <div className="bg-[#3b3054] w-full h-[300px] absolute -z-50 translate-y-[1850px]">
         <div className="absolute right-0 -z-50">
-          <img src="/images/bg-boost-mobile.svg" />
+          <img src={boost} />
         </div>
         <h1 className="text-white text-3xl mt-24">Boost your links today</h1>
         <button className="z-50 mt-10 rounded-full px-10 h-16 bg-[#2acfcf] text-white text-xl">
