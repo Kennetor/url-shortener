@@ -4,18 +4,18 @@ function Footer() {
       <div className="grid translate-x-[50%] right-[50%] mt-10 z-50 absolute ">
         <img src="/images/white-logo.svg" />
       </div>
-      <footer className="flex flex-col items-center text-center leading-loose p-10 bg-base-300 text-base-content gap-6">
+      <footer className="flex flex-col items-center text-center leading-loose p-10 bg-base-300 text-base-content gap-8">
         <div className="tracking-wider mt-16">
-          <h1 className="text-white">Features</h1>
+          <h1 className="text-white leading-loose">Features</h1>
           <p className="link link-hover">Link Shortening</p>
           <p className="link link-hover">Branded Links</p>
           <p className="link link-hover">Analytics</p>
         </div>
         <div className=" ">
-          <h1 className="text-white">Features</h1>
-          <p className="link link-hover">Link Shortening</p>
-          <p className="link link-hover">Branded Links</p>
-          <p className="link link-hover">Analytics</p>
+          <h1 className="text-white">Resources</h1>
+          <p className="link link-hover">Blog</p>
+          <p className="link link-hover">Developers</p>
+          <p className="link link-hover">Support</p>
         </div>
         <div className="m-auto">
           <h1 className="text-white">Company</h1>

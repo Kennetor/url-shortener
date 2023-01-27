@@ -117,7 +117,7 @@ function App() {
               className="flex m-auto z-50"
             />
           </div>
-          <div className="grid justify-center items-center bg-white w-fit px-10 text-[15px] h-72 -z-50 rounded-md">
+          <div className="grid justify-center items-center mt-6 bg-white w-fit px-10 text-[15px] h-72 -z-50 rounded-md">
             {" "}
             <h1 className="mt-16 z-50 text-2xl">Fully Customizable</h1>
             <p className="text-[#9e9aa7] -mt-20">
@@ -126,7 +126,7 @@ function App() {
             </p>
           </div>
         </div>
-        <div className="divider divider-horizontal -z-50 right-|50%] flex m-auto -translate-y-36 w-[10px] bg-[#2acfcf] h-20"></div>
+        <div className="divider divider-horizontal -z-50 right-|50%] flex m-auto -translate-y-[168px] w-[10px] bg-[#2acfcf] h-20"></div>
       </div>
       <div className="bg-[#3b3054] w-full h-[300px] absolute -z-50 translate-y-[1850px]">
         <div className="absolute right-0 -z-50">
