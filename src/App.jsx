@@ -34,6 +34,7 @@ function App() {
   const handleClick = (newLink) => {
     setLinks([newLink, ...links]);
   };
+
   return (
     <>
       <div className="App">
@@ -66,7 +67,7 @@ function App() {
             links are performing
           </p>
         </div>
-        <div className="h-16 absolute text-[20px] rounded-full right-[50%] translate-x-[50%] mt-[17rem] pl-10 pr-10 bg-[#2acfcf] text-white border-none">
+        <div className="h-16 absolute text-[18px] rounded-full right-[50%] translate-x-[50%] mt-[17rem] pl-10 pr-10 bg-[#2acfcf] text-white border-none">
           <button className="mt-4">Get started</button>
         </div>
       </div>
@@ -88,6 +89,11 @@ function App() {
                   className="five input w-72 max-w-xs z-50 text-slate-500 text-xl bg-white h-[55px]"
                 />
                 {/* Gray background of html from here and down */}
+                {error && (
+                  <div className="text-red-600 text-left translate-x-8 translate-y-2">
+                    Please add a link
+                  </div>
+                )}
                 <button
                   type="submit"
                   onClick={() => handleClick(shortUrl)}
@@ -95,21 +101,26 @@ function App() {
                 >
                   Shorten it!
                 </button>
-                {error && (
-                  <div className="text-white">
-                    Error: Please enter a valid link
-                  </div>
-                )}
-                <ul className="grid justify-center items-center bg-white w-fit translate-x- text-[15px] text-black z-50">
+                <ul className="m-auto bg-white w-[340px] h-44 rounded-lg translate-y-20 text-[15px]">
+                  <h1 className="five text-2xl text-left ml-6">{url}</h1>
                   {links.map((link) => (
                     <li
-                      className="flex justify-center items-center bg-white w-fit  text-[15px] text-black z-50"
+                      className="text-[15px] text-[#2acfcf] text-left ml-6"
                       key={link}
                     >
+                      <div className="text-left"></div>
                       {link}
                     </li>
                   ))}
-                  {shortUrl && <a href={shortUrl}>{shortUrl}</a>}
+                  <hr className="mt-4" />
+                  {shortUrl && (
+                    <a href={shortUrl} className="flex ml-6 mt-4">
+                      {shortUrl}
+                      <button className="absolute right-5 five w-[300px] z-50 m-auto rounded-lg border-none py-[10px] px-20 bg-[#2acfcf] text-xl text-white mt-10 ">
+                        Copy
+                      </button>
+                    </a>
+                  )}
                 </ul>
               </div>
             </form>
