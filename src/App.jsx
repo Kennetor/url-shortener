@@ -8,6 +8,7 @@ import customizable from "./images/icon-fully-customizable.svg";
 import boost from "./images/bg-boost-mobile.svg";
 // Components
 import Footer from "./component/footer";
+// import MyComponent from "./component/api";
 
 function App() {
   return (
@@ -42,8 +43,8 @@ function App() {
             links are performing
           </p>
         </div>
-        <div className="absolute text-[18px] rounded-full left-[50%] -translate-x-[50%] mt-[17rem] pl-10 pr-10 bg-[#2acfcf] text-white border-none">
-          <button className="">Get started</button>
+        <div className="h-16 absolute text-[20px] rounded-full right-[50%] translate-x-[50%] mt-[17rem] pl-10 pr-10 bg-[#2acfcf] text-white border-none">
+          <button className="mt-4">Get started</button>
         </div>
       </div>
 
@@ -67,6 +68,7 @@ function App() {
               </button>
             </div>
           </div>
+          {/* Shortened Links here  */}
 
           <div>
             <h1 className="text-3xl">Advanced Statistics</h1>
