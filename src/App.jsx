@@ -42,7 +42,7 @@ function App() {
             links are performing
           </p>
         </div>
-        <div className="btn absolute text-[18px] rounded-full left-[50%] -translate-x-[50%] mt-[17rem] pl-10 pr-10 bg-[#2acfcf] text-white border-none">
+        <div className="absolute text-[18px] rounded-full left-[50%] -translate-x-[50%] mt-[17rem] pl-10 pr-10 bg-[#2acfcf] text-white border-none">
           <button className="">Get started</button>
         </div>
       </div>
@@ -62,9 +62,9 @@ function App() {
               />
               {/* Gray background of html from here and down */}
 
-              <div className="five w-72 m-auto rounded-lg border-none py-[12px] px-20 bg-[#2acfcf] text-xl text-white mt-4">
+              <button className="five w-72 m-auto rounded-lg border-none py-[12px] px-20 bg-[#2acfcf] text-xl text-white mt-4">
                 Shorten it!
-              </div>
+              </button>
             </div>
           </div>
 
