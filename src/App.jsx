@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 // Images
 import logo from "./images/logo.svg";
 import working from "./images/illustration-working.svg";
@@ -8,9 +9,31 @@ import customizable from "./images/icon-fully-customizable.svg";
 import boost from "./images/bg-boost-mobile.svg";
 // Components
 import Footer from "./component/footer";
-// import MyComponent from "./component/api";
 
 function App() {
+  const [url, setUrl] = useState("");
+  const [shortUrl, setShortUrl] = useState(null);
+  const [links, setLinks] = useState([]);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const regex =
+      /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+    if (!regex.test(url)) {
+      setError(true);
+    } else {
+      setError(false);
+      const response = await fetch(
+        `https://api.shrtco.de/v2/shorten?url=${url}`
+      );
+      const data = await response.json();
+      setShortUrl(data.result.short_link);
+    }
+  };
+  const handleClick = (newLink) => {
+    setLinks([newLink, ...links]);
+  };
   return (
     <>
       <div className="App">
@@ -36,7 +59,7 @@ function App() {
           <img src={working} className="absolute top-32 left-20 scale-125" />
         </div>
 
-        <div className="absolute top-96 translate-y-12">
+        <div className="absolute top-96 translate-y-12 overflow-x-visible">
           <h1 className="text-5xl ">More than just shorter links</h1>
           <p className="text-slate-500 mt-4 text-2xl">
             Build your brand's recognition and get detailed insights on how your
@@ -50,28 +73,51 @@ function App() {
 
       <div
         className="bg-[#3b3054] w-[350px]
-       h-40 translate-y-96 justify-center m-auto rounded-xl"
+       h-48 translate-y-96 justify-center m-auto rounded-xl"
       >
         <div className="overflow-hidden rounded-xl">
           <div className="translate-x-40  ">
             <img src={shorten} className="rounded-2xl scale-125" />
-            <div className="-translate-x-40 -translate-y-[110px]">
-              <input
-                type="text"
-                placeholder="Shorten a link here..."
-                className="five input w-72 max-w-xs z-50 text-slate-500 text-xl bg-white h-[55px]"
-              />
-              {/* Gray background of html from here and down */}
-
-              <button className="five w-72 m-auto rounded-lg border-none py-[12px] px-20 bg-[#2acfcf] text-xl text-white mt-4">
-                Shorten it!
-              </button>
-            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="-translate-x-40 -translate-y-[110px]">
+                <input
+                  type="text"
+                  placeholder="Shorten a link here..."
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                  className="five input w-72 max-w-xs z-50 text-slate-500 text-xl bg-white h-[55px]"
+                />
+                {/* Gray background of html from here and down */}
+                <button
+                  type="submit"
+                  onClick={() => handleClick(shortUrl)}
+                  className="five w-72 m-auto rounded-lg border-none py-[10px] px-20 bg-[#2acfcf] text-xl text-white mt-4"
+                >
+                  Shorten it!
+                </button>
+                {error && (
+                  <div className="text-white">
+                    Error: Please enter a valid link
+                  </div>
+                )}
+                <ul className="grid justify-center items-center bg-white w-fit translate-x- text-[15px] text-black z-50">
+                  {links.map((link) => (
+                    <li
+                      className="flex justify-center items-center bg-white w-fit  text-[15px] text-black z-50"
+                      key={link}
+                    >
+                      {link}
+                    </li>
+                  ))}
+                  {shortUrl && <a href={shortUrl}>{shortUrl}</a>}
+                </ul>
+              </div>
+            </form>
           </div>
           {/* Shortened Links here  */}
 
-          <div>
-            <h1 className="text-3xl">Advanced Statistics</h1>
+          <div className="">
+            <h1 className="text-3xl ">Advanced Statistics</h1>
             <p className="text-[#3b3054]">
               Track how your links are performing across the web with our
               advanced statistics dashboard.
@@ -139,13 +185,3 @@ function App() {
   );
 }
 export default App;
-
-// if using grid instead - which is better but i cba to change it now
-
-// <div className="w-full grid  justify-center grid-flow-row">
-// <div className="btn flex items-center w-40 m-2"></div>
-// <div className="btn flex items-center w-40 m-2"></div>
-// <div className="btn flex items-center w-40"></div>
-// <div className="btn flex items-center w-40"></div>
-// </div>
-// <h1>Hello World</h1>
