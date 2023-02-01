@@ -18,7 +18,7 @@
   text-align: center;
 
   color: black;
-  background-color: white;
+  background-color: #bfbfbf;
 }
 body {
   font-size: 18px;
@@ -28,7 +28,6 @@ button,
 .five {
   font-family: Poppins;
   font-weight: 500;
-  
 }
 h1 {
   font-family: Poppins;
@@ -40,6 +39,4 @@ h1 {
   width: 100%;
   height: 400px;
 }
-#test {
-  background-color: red;
-}
+
