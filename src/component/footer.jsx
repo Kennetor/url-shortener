@@ -8,10 +8,8 @@ import whiteLogo from "../images/white-logo.svg";
 function Footer() {
   return (
     <>
-      <div className="grid translate-x-[50%] right-[50%] mt-10 z-50 absolute ">
-        <img src={whiteLogo} />
-      </div>
-      <footer className="flex flex-col items-center text-center leading-loose p-10 bg-base-300 text-base-content gap-8">
+      <img src={whiteLogo} className="translate-y-40 mt-12 m-auto" />
+      <footer className="flex flex-col items-center text-center leading-loose p-10 bg-[#232127] mt-20 text-base-content gap-8">
         <div className="tracking-wider mt-16">
           <h1 className="text-white leading-loose">Features</h1>
           <p className="link link-hover">Link Shortening</p>
