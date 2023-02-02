@@ -30,15 +30,3 @@ export function BoostButton() {
 }
 
 export default GetStarted;
-
-{
-  /* <div className="-mt-12">
-<div className="flex m-auto bg-[#3b3054] translate-y-32 rounded-full w-24 h-24">
-  <img src={props.src} className="m-auto" />
-</div>
-<div className="mt-20 bg-white w-[21rem] m-auto px-10 text-[15px] h-72 rounded-md">
-  <h1 className="text-2xl translate-y-16">{props.title}</h1>
-  <div className="mt-10 five translate-y-12">{props.text}</div>
-</div>
-</div> */
-}

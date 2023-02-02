@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import inputImg from "../images/bg-shorten-mobile.svg";
+import inputImgMobile from "../images/bg-shorten-mobile.svg";
 
 const LinkItem = ({ shortUrl, url }) => {
   return (
@@ -51,7 +51,7 @@ function LinkForm() {
       <div className="mt-20">
         <div className="bg-[#3b3054] h-56 w-[22rem] m-auto rounded-2xl z-50">
           <img
-            src={inputImg}
+            src={inputImgMobile}
             className="translate-x-24 w-64 h-58 rounded-tr-xl"
           />
           <form onSubmit={handleSubmit}>
@@ -74,7 +74,7 @@ function LinkForm() {
               <button
                 type="submit"
                 onClick={() => handleClick(shortUrl)}
-                className="five w-80 m-auto rounded-lg translate-y-16 border-none py-[18px] px-20 bg-[#2acfcf] text-xl text-white "
+                className="five w-80 m-auto rounded-lg xl:absolute translate-y-16 border-none py-[18px] px-20 bg-[#2acfcf] text-xl text-white "
               >
                 Shorten it!
               </button>

@@ -29,8 +29,8 @@ function Footer() {
           <p className="link link-hover">Careers</p>
           <p className="link link-hover">Contact</p>
 
-          <div className="mt-10">
-            <div className="grid grid-flow-col gap-10">
+          <div className="mt-10 ">
+            <div className="grid grid-flow-col gap-10 ">
               <img src={facebook} />
               <img src={twitter} />
               <img src={pinterest} />

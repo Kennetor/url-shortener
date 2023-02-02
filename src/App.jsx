@@ -1,12 +1,9 @@
-import React, { useState } from "react";
 // Images
 import logo from "./images/logo.svg";
 import working from "./images/illustration-working.svg";
-import shorten from "./images/bg-shorten-mobile.svg";
 import brand from "./images/icon-brand-recognition.svg";
 import records from "./images/icon-detailed-records.svg";
 import customizable from "./images/icon-fully-customizable.svg";
-import boost from "./images/bg-boost-mobile.svg";
 // Components
 import Footer from "./component/footer";
 import LinkForm from "./component/linkForm";
@@ -18,7 +15,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <div className="flex mt-8 ml-4">
+        <div className="flex mt-8 ml-4 hide-dropdown">
           <img src={logo} />
           <div>
             <DropdownMenu />
