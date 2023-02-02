@@ -18,7 +18,7 @@
   text-align: center;
 
   color: black;
-  background-color: #bfbfbf;
+  background-color: #F1F1F1;
 }
 body {
   font-size: 18px;
@@ -41,5 +41,5 @@ h1 {
   height: 400px;
 }
 p {
-    color: #bfbfbf;
+    color: #7B7B7B;
 }
