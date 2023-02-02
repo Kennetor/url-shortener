@@ -2,26 +2,6 @@ import React, { useState } from "react";
 import inputImgMobile from "../images/bg-shorten-mobile.svg";
 import inputImgDesktop from "../images/bg-shorten-desktop.svg";
 
-const LinkItem = ({ shortUrl, url }) => {
-  return (
-    <ul className="m-auto mt bg-white w-[340px] h-44 rounded-lg translate-y-20 text-[15px] mt-10">
-      <h1 className="five text-2xl text-left mt-2 ml-6">{url}</h1>
-      <hr className="mt-6" />
-      <div className="grid">
-        <li
-          className="text-[15px] text-[#2acfcf] text-left ml-6 translate-y-2"
-          key={shortUrl}
-        >
-          {shortUrl}
-          <button className="absolute right-5 w-[300px] m-auto rounded-lg border-none py-[10px] px-20 bg-[#2acfcf] text-xl text-white mt-10 ">
-            Copy
-          </button>
-        </li>
-      </div>
-    </ul>
-  );
-};
-
 function LinkForm() {
   const [url, setUrl] = useState("");
   const [links, setLinks] = useState([]);
@@ -58,30 +38,30 @@ function LinkForm() {
             className="lg:h-full rounded-tr-xl lg:rounded-b-xl hidden lg:block"
           />
           <form onSubmit={handleSubmit}>
-            <div className="absolute m-auto -translate-y-32 left-[50%] -translate-x-[50%]">
+            <div className="absolute m-auto -translate-y-32 left-[50%] -translate-x-[50%] lg:-translate-y-28">
               <input
                 type="text"
                 placeholder="Shorten a link here..."
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                className={`input five w-80  text-xl bg-white h-[55px] m-auto translate-y-4 ${
+                className={`input five w-80  text-xl bg-white h-[55px] lg:h-[65px] m-auto translate-y-4 lg:-translate-y-12 lg:w-[50rem] lg:-translate-x-40 ${
                   error ? "border-[#f46262] border-4" : ""
                 }`}
               />
 
               <button
                 type="submit"
-                className="five w-80 m-auto rounded-lg lg:absolute lg:right-0 lg:top-12 translate-y-16 border-none py-[18px] px-20 bg-[#2acfcf] text-xl text-white "
+                className="five w-80 m-auto rounded-lg lg:absolute lg:-right-44 lg:-top-28 translate-y-16 border-none py-[18px] px-20 bg-[#2acfcf] text-xl text-white lg:top"
               >
                 Shorten it!
               </button>
+              {error && (
+                <p className="text-[#f46262] relative text-[16px] -left-20 -top-10 lg:bottom-0 lg:-left-[31rem] lg:-top-8">
+                  Please add a link
+                </p>
+              )}
             </div>
           </form>
-          {error && (
-            <p className="text-[#f46262] absolute text-[16px] top-20">
-              Please add a link
-            </p>
-          )}
         </div>
         {!error &&
           links.map(({ shortUrl, url }) => (
@@ -91,5 +71,23 @@ function LinkForm() {
     </>
   );
 }
-
+const LinkItem = ({ shortUrl, url }) => {
+  return (
+    <ul className="m-auto mt bg-white w-[340px] h-44 rounded-lg translate-y-2 text-[15px] mt-10">
+      <h1 className="five text-2xl text-left mt-2 ml-6">{url}</h1>
+      <hr className="mt-6" />
+      <div className="grid">
+        <li
+          className="text-[15px] text-[#2acfcf] text-left ml-6 translate-y-2"
+          key={shortUrl}
+        >
+          {shortUrl}
+          <button className="absolute right-5 w-[300px] m-auto rounded-lg border-none py-[10px] px-20 bg-[#2acfcf] text-xl text-white mt-10 ">
+            Copy
+          </button>
+        </li>
+      </div>
+    </ul>
+  );
+};
 export default LinkForm;
