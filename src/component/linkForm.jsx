@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import inputImgMobile from "../images/bg-shorten-mobile.svg";
+import inputImgDesktop from "../images/bg-shorten-desktop.svg";
 
 const LinkItem = ({ shortUrl, url }) => {
   return (
@@ -12,7 +13,7 @@ const LinkItem = ({ shortUrl, url }) => {
           key={shortUrl}
         >
           {shortUrl}
-          <button className="absolute right-5 w-[300px]  m-auto rounded-lg border-none py-[10px] px-20 bg-[#2acfcf] text-xl text-white mt-10 ">
+          <button className="absolute right-5 w-[300px] m-auto rounded-lg border-none py-[10px] px-20 bg-[#2acfcf] text-xl text-white mt-10 ">
             Copy
           </button>
         </li>
@@ -23,7 +24,6 @@ const LinkItem = ({ shortUrl, url }) => {
 
 function LinkForm() {
   const [url, setUrl] = useState("");
-  const [shortUrl, setShortUrl] = useState(null);
   const [links, setLinks] = useState([]);
   const [error, setError] = useState(false);
 
@@ -39,20 +39,23 @@ function LinkForm() {
         `https://api.shrtco.de/v2/shorten?url=${url}`
       );
       const data = await response.json();
-      setShortUrl(data.result.short_link);
+
+      const shortUrl = data.result.short_link;
+      setLinks([...links, { shortUrl, url }]);
     }
-  };
-  const handleClick = (newLink) => {
-    setLinks([...links, { shortUrl: newLink, url }]);
   };
 
   return (
     <>
       <div className="mt-20">
-        <div className="bg-[#3b3054] h-56 w-[22rem] m-auto rounded-2xl z-50">
+        <div className="bg-[#3b3054] h-56 w-[22rem] lg:w-[80rem] m-auto rounded-2xl lg:rounded-xl z-50">
           <img
             src={inputImgMobile}
-            className="translate-x-24 w-64 h-58 rounded-tr-xl"
+            className="translate-x-24 w-64 h-58 rounded-tr-xl block lg:hidden"
+          />{" "}
+          <img
+            src={inputImgDesktop}
+            className="lg:h-full rounded-tr-xl lg:rounded-b-xl hidden lg:block"
           />
           <form onSubmit={handleSubmit}>
             <div className="absolute m-auto -translate-y-32 left-[50%] -translate-x-[50%]">
@@ -65,26 +68,25 @@ function LinkForm() {
                   error ? "border-[#f46262] border-4" : ""
                 }`}
               />
-              {error && (
-                <p className="text-[#f46262] absolute text-[16px] top-20">
-                  Please add a link
-                </p>
-              )}
 
               <button
                 type="submit"
-                onClick={() => handleClick(shortUrl)}
-                className="five w-80 m-auto rounded-lg xl:absolute translate-y-16 border-none py-[18px] px-20 bg-[#2acfcf] text-xl text-white "
+                className="five w-80 m-auto rounded-lg lg:absolute lg:right-0 lg:top-12 translate-y-16 border-none py-[18px] px-20 bg-[#2acfcf] text-xl text-white "
               >
                 Shorten it!
               </button>
-              {!error &&
-                links.map(({ shortUrl, url }) => (
-                  <LinkItem key={shortUrl} shortUrl={shortUrl} url={url} />
-                ))}
             </div>
           </form>
+          {error && (
+            <p className="text-[#f46262] absolute text-[16px] top-20">
+              Please add a link
+            </p>
+          )}
         </div>
+        {!error &&
+          links.map(({ shortUrl, url }) => (
+            <LinkItem key={shortUrl} shortUrl={shortUrl} url={url} />
+          ))}
       </div>
     </>
   );
