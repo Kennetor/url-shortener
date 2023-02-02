@@ -1,7 +1,7 @@
 function DropdownMenu() {
   return (
     <>
-      <div className="absolute right-5 top-6 scale-150 text-white  z-50 five">
+      <div className="absolute right-5 top-6 scale-150 text-white z-50 five lg:hidden">
         <div className="dropdown dropdown-end">
           <label
             tabIndex={0}

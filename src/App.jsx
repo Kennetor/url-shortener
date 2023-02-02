@@ -15,16 +15,21 @@ function App() {
   return (
     <>
       <div className="App">
-        <div className="flex mt-8 ml-4 hide-dropdown">
+        <div className="flex mt-8 ml-4 lg:justify-evenly">
           <img src={logo} />
+          <div className="hidden lg:flex lg:items">
+            <p>Features</p>
+            <p>Pricing</p>
+            <p>Resources</p>
+          </div>
           <div>
             <DropdownMenu />
           </div>
         </div>
-        <div className="mt-4 overflow-hidden">
+        <div className="mt-4 overflow-hidden lg:overflow-visible">
           <img
             src={working}
-            className="fixed-active translate-x-28 translate-y-20 scale-150"
+            className="translate-x-28 translate-y-20 scale-150 lg:scale-100 "
           />
         </div>
         <div className="bg-white w-full h-[1035px] absolute -z-50 top-0"></div>
