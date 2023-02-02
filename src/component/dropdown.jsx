@@ -23,7 +23,7 @@ function DropdownMenu() {
           </label>
           <ul
             tabIndex={0}
-            className="dropdown-content menu p-2 shadow bg-[#3b3054] top-20 rounded-box w-52 -translate-x-4"
+            className="dropdown-content menu p-2 shadow bg-[#3b3054] top-20 rounded-box w-52 -translate-x-4 items-center"
           >
             <li>
               <a>Features</a>
@@ -34,12 +34,14 @@ function DropdownMenu() {
             <li>
               <a>Resources</a>
             </li>
-            <hr />
+            <hr className="w-40" />
             <li>
               <a>Login</a>
             </li>
             <li>
-              <a>Sign Up</a>
+              <div className="w-44 rounded-full text-[12px] bg-[#2acfcf]  flex justify-center mb-4">
+                Sign Up
+              </div>
             </li>
           </ul>
         </div>
